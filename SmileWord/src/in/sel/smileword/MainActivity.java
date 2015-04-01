@@ -81,6 +81,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	/** For new word It will reset all parameters */
 	public void reset() {
 
+		/** Default Word */
+		strGuessText = "OHELLO";
+
 		/** Reset Chances */
 		noOfChances = 5;
 
@@ -107,6 +110,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			btn.setBackgroundResource(android.R.drawable.btn_default_small);
 			btn.setEnabled(true);
 		}
+
+		/** initialization of char array with same length */
+		chArray = new char[strGuessText.length()];
+		/** Initialize with space */
+		for (int i = 0; i < chArray.length; i++)
+			chArray[i] = ' ';
 
 		/** Enable tap button Now Until game finish */
 		Button b = (Button) findViewById(R.id.btn_tap);
