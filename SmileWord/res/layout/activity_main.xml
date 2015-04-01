@@ -46,7 +46,8 @@
         android:layout_height="1dp"
         android:background="@android:color/holo_blue_dark" />
 
-    <TableRow
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -59,13 +60,15 @@
             android:text="@string/tap_for_hint" />
 
         <TextView
+            android:layout_weight="0.5"
             android:id="@+id/tv_no_of_chances"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
             android:textColor="@android:color/holo_orange_dark"
-            android:textSize="20dp" />
-    </TableRow>
+            android:textSize="30dp" />
+    </LinearLayout>
 
     <View
         android:layout_width="wrap_content"

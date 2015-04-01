@@ -75,7 +75,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		DBHelper db = new DBHelper(this);
 		db.insertWord_Hint(lsTemp);
-
 	}
 
 	/** For new word It will reset all parameters */
@@ -152,18 +151,23 @@ public class MainActivity extends Activity implements OnClickListener {
 			else
 				tv.append("_ ");
 		}
-
-		/** Disable tap button Now Until game finish */
-		Button b = (Button) v;
-		b.setEnabled(false);
 	}
 
 	@Override
 	public void onClick(View v) {
 
+		/** Once Started playing Disable tap button Now Until game finish */
+		Button b = (Button) findViewById(R.id.btn_tap);
+		b.setEnabled(false);
+		
+		/* get the text of clicked button*/
 		Button btnTemp = (Button) v;
-		String temp = strGuessText.toUpperCase(Locale.ENGLISH);
 		String strChar = btnTemp.getText().toString();
+		
+		/* get the target strign*/
+		String temp = strGuessText.toUpperCase(Locale.ENGLISH);
+		
+		/* compare them .. does clicked button is in target string*/
 		if (temp.contains(strChar)) {
 			btnTemp.setBackgroundColor(getResources().getColor(android.R.color.holo_green_dark));
 			fillBlankSpace(strGuessText, strChar.charAt(0));
