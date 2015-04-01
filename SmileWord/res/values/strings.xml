@@ -4,5 +4,7 @@
     <string name="app_name">SmileWord</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tap_for_hint">Tap for Hint</string>
+    <string name="pascle">Pascle</string>
 
 </resources>
